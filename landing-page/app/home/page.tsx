@@ -1,18 +1,31 @@
+"use client";
 
-'use client'
-
-import { BentoSection } from '@/components/custom/bento-section'
-import { CodeSnippet } from '@/components/custom/code-snippet'
-import { HeorBackground } from '@/components/custom/hero-background'
-import { HeroText } from '@/components/custom/hero-text'
-import { Code } from 'lucide-react'
-import React from 'react'
+import { BentoSection } from "@/components/custom/bento-section";
+import ThemeToggle from "@/components/custom/dark";
+import { GithubGlobe } from "@/components/custom/github-globe";
+import { HeroBackground } from "@/components/custom/hero-background";
+import { HeroScrollDemo } from "@/components/custom/hero-scroll";
+import { HeroText } from "@/components/custom/hero-text";
+import React from "react";
 
 export default function page() {
   return (
-    <div className='py-16   '>
-      <HeroText/>
-      <BentoSection/>
+    <div>
+      <ThemeToggle />
+      <HeroBackground />
+      <HeroScrollDemo />
+      <div className="py-6">
+        <h2 className="max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white text-3xl md:text-5xl md:leading-tight">
+          Got An Idea? Let's Build It Together
+        </h2>
+        <h2 className="text-sm md:text-base max-w-4xl my-4 mx-auto text-gray-800 font-normal dark:text-gray-100 text-center">
+          From AI-driven analytics to IoT-powered smart devices and <br />{" "}
+          cutting-edge web applications, we develop solutions that shape the
+          future.
+        </h2>
+      </div>
+      <BentoSection />
+      {/* <GithubGlobe /> */}
     </div>
-  )
+  );
 }

@@ -78,11 +78,11 @@ const items = [
   //   header: <Skeleton />,
   //   icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
   // },
-  {
-    title: "The Spirit of Adventure",
-    description:
-      "From AI-driven analytics to IoT-powered smart devices and cutting-edge web applications, we develop solutions that shape the future.",
-    header: <GithubGlobe />,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-  },
+  // {
+  //   title: "The Spirit of Adventure",
+  //   description:
+  //     "From AI-driven analytics to IoT-powered smart devices and cutting-edge web applications, we develop solutions that shape the future.",
+  //   header: <GithubGlobe />,
+  //   icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+  // },
 ];

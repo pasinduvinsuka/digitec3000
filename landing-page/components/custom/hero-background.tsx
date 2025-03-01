@@ -1,18 +1,29 @@
 "use client";
-import React from "react";
-import { WavyBackground } from "../ui/wavy-background";
-import { HeroText } from "./hero-text";
 
-export function HeorBackground() {
+import { cn } from "@/lib/utils";
+import { DotPattern } from "../magicui/dot-pattern";
+
+export function HeroBackground() {
   return (
-    <WavyBackground className="max-w-4xl mx-auto pb-40">
-      <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
-        Hero waves are cool
-      </p>
-      <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-        Leverage the power of canvas to create a beautiful hero section
-      </p>
-      <HeroText />
-    </WavyBackground>
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+      <DotPattern
+        glow={true}
+        className={cn(
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+        )}
+        cr={1}
+        width={18}
+        height={18}
+      />
+      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
+        <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10">
+          We Develop Solutions That Shape The Future
+        </h1>
+        <p className="text-center mt-6 text-base md:text-xl text-gray-500 dark:text-gray-100 max-w-3xl mx-auto relative z-10">
+          From AI-driven analytics to IoT-powered smart devices and  <br/>cutting-edge
+          web applications, we develop solutions that shape the future.
+        </p>
+      </div>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import countries from "@/data/globe.json";
+import countries from "@/public/data/globe.json";
 import { extend, ReactThreeFiber } from "@react-three/fiber";
 
 
