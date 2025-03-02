@@ -2,15 +2,17 @@
 
 import { BentoSection } from "@/components/custom/bento-section";
 import ThemeToggle from "@/components/custom/dark";
-import { GithubGlobe } from "@/components/custom/github-globe";
+import { FeaturesSectionDemo } from "@/components/custom/feature-section";
 import { HeroBackground } from "@/components/custom/hero-background";
 import { HeroScrollDemo } from "@/components/custom/hero-scroll";
-import { HeroText } from "@/components/custom/hero-text";
+import { FloatingNavDemo } from "@/components/custom/nav-bar";
+import { InfiniteMovingCardsDemo } from "@/components/custom/testomonials";
 import React from "react";
 
 export default function page() {
   return (
-    <div>
+    <div className="">
+      <FloatingNavDemo/>
       <ThemeToggle />
       <HeroBackground />
       <HeroScrollDemo />
@@ -25,6 +27,8 @@ export default function page() {
         </h2>
       </div>
       <BentoSection />
+      <FeaturesSectionDemo />
+      <InfiniteMovingCardsDemo/>
       {/* <GithubGlobe /> */}
     </div>
   );
