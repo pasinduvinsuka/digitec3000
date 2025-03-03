@@ -13,21 +13,30 @@ import {
 import { CodeSnippet } from "./code-snippet";
 import { GithubGlobe } from "./github-globe";
 import clsx from "clsx";
+import IotWidget from "./iot-widget";
+import MobileDetail from "../animata/widgets/mobile-detail";
 
 export function BentoSection() {
   return (
-    <BentoGrid className="max-w-7xl mx-auto">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          icon={item.icon}
-          className={clsx(i === 0 || i === 2 && "md:col-span-2" || i === 4 && "md:col-span-2" || i === 6 && "md:col-span-4")}
+    <div className="py-20">
+      <BentoGrid className="max-w-7xl mx-auto ">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            icon={item.icon}
+            className={clsx(
+              i === 0 ||
+                (i === 2 && "md:col-span-2") ||
+                (i === 4 && "md:col-span-2") ||
+                (i === 6 && "md:col-span-4"), 'boder border-dashed border-2 border-gray-200'
+            )}
           />
-      ))}
-    </BentoGrid>
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
 const Skeleton = () => (
@@ -49,19 +58,19 @@ const items = [
   {
     title: "The Art of Design",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
+    header: <Skeleton/>,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />,
+    title: "Unleash the Potential of IoT",
+    description: "Transform the way the world connects and communicates.",
+    header: <IotWidget/>,
     icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Code Snippets",
+    title: "Craft Your Code, Shape the Future",
     description:
-      "Not sure about you, but we find ourselves going back to old projects all the time to quickly copy that snippet we used before. So we decided to keep track of them from now on. Try the below snippet in your project, it’s on the house.",
+      "Custom solutions built from the ground up to meet your vision.",
     header: <CodeSnippet />,
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },

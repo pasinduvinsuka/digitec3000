@@ -3,6 +3,8 @@
 import { BentoSection } from "@/components/custom/bento-section";
 import ThemeToggle from "@/components/custom/dark";
 import { FeaturesSectionDemo } from "@/components/custom/feature-section";
+import { FlipWord } from "@/components/custom/flip-words";
+import { FooterHoverText } from "@/components/custom/footer-text";
 import { HeroBackground } from "@/components/custom/hero-background";
 import { HeroScrollDemo } from "@/components/custom/hero-scroll";
 import { FloatingNavDemo } from "@/components/custom/nav-bar";
@@ -11,7 +13,7 @@ import React from "react";
 export default function page() {
   return (
     <div className="">
-      <FloatingNavDemo/>
+      <FloatingNavDemo />
       <ThemeToggle />
       <HeroBackground />
       <HeroScrollDemo />
@@ -26,7 +28,10 @@ export default function page() {
         </h2>
       </div>
       <BentoSection />
+      <FlipWord />
       <FeaturesSectionDemo />
+      <FooterHoverText />
+
       {/* <GithubGlobe /> */}
     </div>
   );
