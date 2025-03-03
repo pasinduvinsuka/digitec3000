@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 
 /**
  *  DotPattern Component Props
@@ -76,36 +76,49 @@ export function DotPattern({
   const containerRef = useRef<SVGSVGElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  useEffect(() => {
-    const updateDimensions = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
-        setDimensions({ width, height });
-      }
-    };
-
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
-    return () => window.removeEventListener("resize", updateDimensions);
+  // Debounced resize handler
+  const updateDimensions = useCallback(() => {
+    if (containerRef.current) {
+      const { width, height } = containerRef.current.getBoundingClientRect();
+      setDimensions({ width, height });
+    }
   }, []);
 
-  const dots = Array.from(
-    {
-      length:
-        Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
-    },
-    (_, i) => {
-      const col = i % Math.ceil(dimensions.width / width);
-      const row = Math.floor(i / Math.ceil(dimensions.width / width));
-      return {
-        x: col * width + cx,
-        y: row * height + cy,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
-      };
-    },
-  );
+  useEffect(() => {
+    updateDimensions(); // Run on mount
+    let resizeTimeout = setTimeout(() => {
+      updateDimensions();
+    }, 100); // Debounced update
+    
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(updateDimensions, 100); // Debounced update
+    };
+    
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [updateDimensions]);
+
+  // Memoize dot positions to prevent recalculating on every render
+  const dots = useMemo(() => {
+    return Array.from(
+      {
+        length:
+          Math.ceil(dimensions.width / width) *
+          Math.ceil(dimensions.height / height),
+      },
+      (_, i) => {
+        const col = i % Math.ceil(dimensions.width / width);
+        const row = Math.floor(i / Math.ceil(dimensions.width / width));
+        return {
+          x: col * width + cx,
+          y: row * height + cy,
+          delay: Math.random() * 5,
+          duration: Math.random() * 3 + 2,
+        };
+      }
+    );
+  }, [dimensions, width, height, cx, cy]);
 
   return (
     <svg
@@ -113,7 +126,7 @@ export function DotPattern({
       aria-hidden="true"
       className={cn(
         "pointer-events-none absolute inset-0 h-full w-full",
-        className,
+        className
       )}
       {...props}
     >
@@ -123,6 +136,7 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
+
       {dots.map((dot, index) => (
         <motion.circle
           key={`${dot.x}-${dot.y}`}

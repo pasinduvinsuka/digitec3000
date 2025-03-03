@@ -6,7 +6,6 @@ import { FeaturesSectionDemo } from "@/components/custom/feature-section";
 import { HeroBackground } from "@/components/custom/hero-background";
 import { HeroScrollDemo } from "@/components/custom/hero-scroll";
 import { FloatingNavDemo } from "@/components/custom/nav-bar";
-import { InfiniteMovingCardsDemo } from "@/components/custom/testomonials";
 import React from "react";
 
 export default function page() {
@@ -28,7 +27,6 @@ export default function page() {
       </div>
       <BentoSection />
       <FeaturesSectionDemo />
-      <InfiniteMovingCardsDemo/>
       {/* <GithubGlobe /> */}
     </div>
   );
