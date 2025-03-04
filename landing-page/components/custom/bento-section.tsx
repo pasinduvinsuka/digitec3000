@@ -15,6 +15,7 @@ import { GithubGlobe } from "./github-globe";
 import clsx from "clsx";
 import IotWidget from "./iot-widget";
 import MobileDetail from "../animata/widgets/mobile-detail";
+import { CompareDemo } from "./compare-widget";
 
 export function BentoSection() {
   return (
@@ -31,7 +32,8 @@ export function BentoSection() {
               i === 0 ||
                 (i === 2 && "md:col-span-2") ||
                 (i === 4 && "md:col-span-2") ||
-                (i === 6 && "md:col-span-4"), 'boder border-dashed border-2 border-gray-200'
+                (i === 6 && "md:col-span-4"),
+              "boder border-dashed border-2 border-gray-100 "
             )}
           />
         ))}
@@ -58,20 +60,20 @@ const items = [
   {
     title: "The Art of Design",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton/>,
+    header: <CodeSnippet />,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Unleash the Potential of IoT",
     description: "Transform the way the world connects and communicates.",
-    header: <IotWidget/>,
+    header: <IotWidget />,
     icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Craft Your Code, Shape the Future",
+    title: "Outdated to Outstanding: Legacy System Transformation",
     description:
-      "Custom solutions built from the ground up to meet your vision.",
-    header: <CodeSnippet />,
+      "Unlock the full potential of your systems with intelligent upgrades that enhance efficiency, security, and innovation.",
+    header:  <CompareDemo />,
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
   {

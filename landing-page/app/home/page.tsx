@@ -31,6 +31,7 @@ export default function page() {
       <FlipWord />
       <FeaturesSectionDemo />
       <FooterHoverText />
+      
 
       {/* <GithubGlobe /> */}
     </div>
