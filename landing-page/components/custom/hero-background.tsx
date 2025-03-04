@@ -1,12 +1,12 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { DotPattern } from "../magicui/dot-pattern";
+import { ShootingStars } from "../ui/shooting-stars";
+import { StarsBackground } from "../ui/stars-background";
 
 export function HeroBackground() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-      <DotPattern
+      {/* <DotPattern
         glow={true}
         className={cn(
           "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
@@ -14,7 +14,7 @@ export function HeroBackground() {
         cr={1}
         width={18}
         height={18}
-      />
+      /> */}
       <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
         <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10">
           We Develop Solutions That Shape The Future
@@ -24,6 +24,8 @@ export function HeroBackground() {
           web applications, we develop solutions that shape the future.
         </p>
       </div>
+           <ShootingStars />
+            <StarsBackground />
     </div>
   );
 }

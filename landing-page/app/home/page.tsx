@@ -1,7 +1,7 @@
 "use client";
 
 import { BentoSection } from "@/components/custom/bento-section";
-import ThemeToggle from "@/components/custom/dark";
+import ThemeToggle from "@/components/custom/theme-toggle";
 import { FeaturesSectionDemo } from "@/components/custom/feature-section";
 import { FlipWord } from "@/components/custom/flip-words";
 import { FooterHoverText } from "@/components/custom/footer-text";
