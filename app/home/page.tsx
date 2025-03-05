@@ -2,18 +2,14 @@
 
 import { BentoSection } from "@/components/custom/bento-section";
 import { FeaturesSectionDemo } from "@/components/custom/feature-section";
-import { FlipWord } from "@/components/custom/flip-words";
 import { HeroBackground } from "@/components/custom/hero-background";
 import { HeroScrollDemo } from "@/components/custom/hero-scroll";
-import { FloatingNavDemo } from "@/components/custom/nav-bar";
 import React from "react";
 import FAQ from "@/components/custom/faq";
-import Footer from "@/components/custom/footer";
 
 export default function page() {
   return (
     <div className="">
-      <FloatingNavDemo />
       <HeroBackground />
       <HeroScrollDemo />
       <div className="py-6">
@@ -29,10 +25,9 @@ export default function page() {
       <BentoSection />
       {/* <FlipWord /> */}
       <FeaturesSectionDemo />
-      <FAQ />
-      <Footer />
-      {/* <FooterHoverText /> */}
-      {/* <GithubGlobe /> */}
+      <div id="faq">
+        <FAQ />
+      </div>
     </div>
   );
 }
