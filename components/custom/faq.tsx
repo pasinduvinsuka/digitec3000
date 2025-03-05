@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 
 export default function FAQ() {
   return (
-    <section className="container py-12 md:py-24 mx-auto px-2">
+    <section className="container py-12 md:py-24 mx-auto px-6">
       <motion.div 
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -55,7 +55,7 @@ const AccordionMotionContent = ({ children }: { children: React.ReactNode }) => 
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="overflow-hidden"
+      className="overflow-hidden mx-auto"
     >
       <AccordionContent>{children}</AccordionContent>
     </motion.div>
