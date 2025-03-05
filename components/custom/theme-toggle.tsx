@@ -30,6 +30,7 @@ export default function ThemeToggle() {
       variant="link"
       size="icon"
       onClick={() => setDarkMode((prev) => !prev)}
+      className="hover:cursor-pointer"
     >
       {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Button>
