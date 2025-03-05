@@ -1,11 +1,23 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const isLocalStorageAvailable =
+  typeof window !== "undefined" && window.localStorage;
+const defaultTheme = "dark";
+
 export default function ThemeToggle() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const storedTheme = localStorage.getItem("theme");
-    return storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const storedTheme = isLocalStorageAvailable
+      ? localStorage.getItem("theme")
+      : defaultTheme;
+    return (
+      storedTheme === "dark" ||
+      (!storedTheme &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
   });
 
   useEffect(() => {
@@ -14,7 +26,11 @@ export default function ThemeToggle() {
   }, [darkMode]);
 
   return (
-    <Button variant="link" size="icon" onClick={() => setDarkMode((prev) => !prev)}>
+    <Button
+      variant="link"
+      size="icon"
+      onClick={() => setDarkMode((prev) => !prev)}
+    >
       {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Button>
   );
