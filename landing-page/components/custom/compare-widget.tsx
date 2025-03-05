@@ -5,8 +5,8 @@ export function CompareDemo() {
   return (
     <div className=" rounded-3xl shadow-2xl">
       <Compare
-        firstImage="/a.png"
-        secondImage="/b.png"
+        firstImage="/b.png"
+        secondImage="/a.png"
         firstImageClassName="object-cover object-left-top"
         secondImageClassname="object-cover object-left-top"
         className="h-[250px] md:h-[500px] w-auto"

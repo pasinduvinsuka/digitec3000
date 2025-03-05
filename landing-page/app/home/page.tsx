@@ -9,6 +9,8 @@ import { HeroBackground } from "@/components/custom/hero-background";
 import { HeroScrollDemo } from "@/components/custom/hero-scroll";
 import { FloatingNavDemo } from "@/components/custom/nav-bar";
 import React from "react";
+import FAQ from "@/components/custom/faq";
+import Footer from "@/components/custom/footer";
 
 export default function page() {
   return (
@@ -30,9 +32,9 @@ export default function page() {
       <BentoSection />
       <FlipWord />
       <FeaturesSectionDemo />
-      <FooterHoverText />
-      
-
+      <FAQ />
+      <Footer />
+      {/* <FooterHoverText /> */}
       {/* <GithubGlobe /> */}
     </div>
   );
