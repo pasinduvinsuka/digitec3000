@@ -12,7 +12,12 @@ const code = `const filteredPoints = points.filter(
         (k) => v2[k as "lat" | "lng"] === v[k as "lat" | "lng"]
       )
     ) === i
-);`;
+);
+
+  const handleClick = () => {
+    setCount((prev) => prev + 1);
+  };
+`;
 
 export function CodeSnippet() {
   return (
