@@ -9,7 +9,8 @@ const code = `const filteredPoints = points.filter(
   (v, i, a) =>
     a.findIndex((v2) =>
       ["lat", "lng"].every(
-        (k) => v2[k as "lat" | "lng"] === v[k as "lat" | "lng"]
+        (k) => 
+        v2[k as "lat" | "lng"] === v[k as "lat" | "lng"]
       )
     ) === i
 );
