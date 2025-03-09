@@ -32,13 +32,13 @@ export function BentoSection() {
             header={item.header}
             icon={item.icon}
             className={clsx(
-              i === 0 && "md:col-span-2" ||
-                (i === 1 && "md:col-span-2") ||
-                (i === 2 && "md:col-span-1") ||
-                (i === 3 && "md:col-span-3") ||
-                (i === 4 && "md:col-span-3") ||
-                (i === 6 && "md:col-span-4"),
-              "boder border-dashed border-2 border-gray-100 "
+              i === 0 && "lg:col-span-2" ||
+                (i === 1 && "lg:col-span-2") ||
+                (i === 2 && "lg:col-span-1") ||
+                (i === 3 && "lg:col-span-3") ||
+                (i === 4 && "lg:col-span-3") ||
+                (i === 6 && "lg:col-span-4"),
+              "boder border-dashed border-2 border-gray-200 "
             )}
           />
         ))}

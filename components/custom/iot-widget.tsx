@@ -4,7 +4,7 @@ import ScoreBoard from "../animata/widgets/score-board";
 
 export default function IotWidget() {
   return (
-    <div className="flex felx-row md:flex-col items-center justify-center gap-4">
+    <div className="flex felx-row lg:flex-col items-center justify-center gap-4">
       <MobileDetail />
       <ScoreBoard
   items={[

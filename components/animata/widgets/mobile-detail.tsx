@@ -10,7 +10,7 @@ interface ProgressBarData {
 
 const progressBarsData: ProgressBarData[] = [
   {
-    label: "Battery",
+    label: "Humidity",
     value: 25,
     max: 100,
     icon: (
@@ -21,7 +21,7 @@ const progressBarsData: ProgressBarData[] = [
     ),
   },
   {
-    label: "Volume",
+    label: "Temp",
     value: 50,
     max: 100,
     icon: (
@@ -29,7 +29,7 @@ const progressBarsData: ProgressBarData[] = [
     ),
   },
   {
-    label: "Ram",
+    label: "Moisture",
     value: 75,
     max: 100,
     icon: <Cpu size={10} className="text-zinc-400 transition-colors group-hover:text-zinc-300" />,
